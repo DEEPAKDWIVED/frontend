@@ -88,7 +88,7 @@ export const EmployeeButtons = ({ id }) => {
 // Fetch Department API (Optional utility)
 export const fetchDepartments = async () => {
   try {
-    const response = await axios.get("http://localhost:5000/api/department", {
+    const response = await axios.get("https://empbackend-steel.vercel.app/api/department", {
       headers: {
         Authorization: `Bearer ${localStorage.getItem("token")}`,
       },
@@ -106,7 +106,7 @@ export const fetchDepartments = async () => {
 export const getEmployees = async (deptId) => {
   try {
     const response = await axios.get(
-      `http://localhost:5000/api/employee/department/${deptId}`, // Updated endpoint
+      `https://empbackend-steel.vercel.app/api/employee/department/${deptId}`, // Updated endpoint
       {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`
