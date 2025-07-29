@@ -13,8 +13,8 @@ const { userId } = useParams();
   const fetchLeaves = async () => {
     try {
         const url = user.role === "admin"
-            ? "http://localhost:5000/api/leave"
-            : `http://localhost:5000/api/leave/user/${user._id}`;
+            ? "https://empbackend-steel.vercel.app/api/leave"
+            : `https://empbackend-steel.vercel.app/api/leave/user/${user._id}`;
         
         const response = await axios.get(url, {
             headers: {

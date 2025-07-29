@@ -10,7 +10,7 @@ const View = () => {
     const fetchEmployee = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:5000/api/employee/${id}`,
+          `https://empbackend-steel.vercel.app/api/employee/${id}`,
           {
             headers: {
               Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -40,7 +40,7 @@ const View = () => {
             {/* Profile Image Section */}
             <div className="flex justify-center md:justify-start">
               <img
-                src={`http://localhost:5000/${employee.userId?.profileImage}`}
+                src={`https://empbackend-steel.vercel.app/${employee.userId?.profileImage}`}
                 alt={`${employee.userId?.name}'s profile`}
                 className="rounded-full border-4 border-gray-200 w-48 h-48 object-cover shadow-lg"
                 onError={(e) => {

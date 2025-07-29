@@ -11,7 +11,7 @@ const Detail = () => {
     const fetchLeave = async () => {
       try {
         const response = await axios.get(
-          `http://localhost:5000/api/leave/detail/${id}`,
+          `https://empbackend-steel.vercel.app/api/leave/detail/${id}`,
           {
             headers: {
               Authorization: `Bearer ${localStorage.getItem("token")}`,
@@ -34,7 +34,7 @@ const Detail = () => {
   const changeStatus = async (id, status) => {
     try {
       const response = await axios.put(
-        `http://localhost:5000/api/leave/${id}`,
+        `https://empbackend-steel.vercel.app/api/leave/${id}`,
         { status },
         {
           headers: {
@@ -65,7 +65,7 @@ const Detail = () => {
             {/* Profile Image */}
             <div className="flex justify-center md:justify-start">
               <img
-                src={`http://localhost:5000/${leave.employeeId.userId?.profileImage}`}
+                src={`https://empbackend-steel.vercel.app/${leave.employeeId.userId?.profileImage}`}
                 alt="Profile"
                 className="rounded-full border-4 border-gray-200 w-52 h-52 object-cover shadow-xl"
                 onError={(e) => {

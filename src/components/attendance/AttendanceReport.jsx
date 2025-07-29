@@ -12,7 +12,7 @@ const AttendanceReport = () => {
       const query = new URLSearchParams({ limit, skip });
       if (dateFilter) query.append("date", dateFilter);
 
-      const response = await axios.get(`http://localhost:5000/api/attendance/report?${query.toString()}`, {
+      const response = await axios.get(`https://empbackend-steel.vercel.app/api/attendance/report?${query.toString()}`, {
         headers: {
           Authorization: `Bearer ${localStorage.getItem("token")}`,
         },

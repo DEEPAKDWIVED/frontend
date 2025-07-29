@@ -12,7 +12,7 @@ const [filteredEmployees,setFilteredEmployees]=useState([])
     const fetchEmployees = async () => {
       setEmpLoading(true);
       try {
-        const response = await axios.get("http://localhost:5000/api/employee", {
+        const response = await axios.get("https://empbackend-steel.vercel.app/api/employee", {
           headers: {
             Authorization: `Bearer ${localStorage.getItem("token")}`,
           },
@@ -28,7 +28,7 @@ const [filteredEmployees,setFilteredEmployees]=useState([])
             name: emp.userId?.name || "Unknown",
             dob: emp.dob ? new Date(emp.dob).toLocaleDateString() : "N/A",
             profileImage: emp.userId?.profileImage 
-              ? `http://localhost:5000/${emp.userId.profileImage}`
+              ? `https://empbackend-steel.vercel.app/${emp.userId.profileImage}`
               : "https://via.placeholder.com/150"
           }));
           setEmployees(data);
